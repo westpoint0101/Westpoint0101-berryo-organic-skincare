@@ -1,22 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">AR-EXCHANGE</title>
-  <desc id="desc">Buy, sell, swap and gift cards with AR-EXCHANGE.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#07111d"/>
-      <stop offset="100%" stop-color="#123652"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#59d0a6"/>
-      <stop offset="100%" stop-color="#3d8bff"/>
+      <stop offset="0%" stop-color="#f7eae5"/>
+      <stop offset="100%" stop-color="#e6cec7"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1020" cy="120" r="190" fill="#59d0a6" opacity=".12"/>
-  <circle cx="180" cy="570" r="260" fill="#3d8bff" opacity=".14"/>
-  <rect x="110" y="120" width="128" height="128" rx="34" fill="url(#accent)"/>
-  <path d="m174 146-34 76h19l6-15h18l6 15h19l-34-76Zm0 30 6 16h-12l6-16Z" fill="#07111d"/>
-  <text x="110" y="330" font-family="Arial, sans-serif" font-size="70" fill="#edf3fa" font-weight="700">AR-EXCHANGE</text>
-  <text x="114" y="390" font-family="Arial, sans-serif" font-size="28" fill="#59d0a6" letter-spacing="5">BUY • SELL • SWAP • GIFT CARDS</text>
-  <text x="114" y="470" font-family="Arial, sans-serif" font-size="28" fill="#a8b8c8">Simple, secure digital asset trading built for Africa.</text>
+  <circle cx="910" cy="150" r="140" fill="#d9b0a7" opacity="0.5"/>
+  <circle cx="980" cy="450" r="230" fill="#b3c2a8" opacity="0.4"/>
+  <rect x="120" y="120" width="430" height="380" rx="36" fill="#fff" opacity="0.9"/>
+  <text x="165" y="260" font-family="Arial, sans-serif" font-size="54" fill="#3d2b27" font-weight="700">BERRYO</text>
+  <text x="165" y="330" font-family="Arial, sans-serif" font-size="70" fill="#2f211d" font-weight="700">Purely Organic.</text>
+  <text x="165" y="410" font-family="Arial, sans-serif" font-size="70" fill="#2f211d" font-weight="700">Naturally Beautiful.</text>
+  <text x="165" y="470" font-family="Arial, sans-serif" font-size="26" fill="#735d54">Organic skincare for self-care, beauty and glow.</text>
 </svg>

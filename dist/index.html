@@ -3,20 +3,638 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AR-EXCHANGE is a simple, secure African digital asset platform for buying, selling, swapping crypto and trading gift cards." />
-    <meta name="keywords" content="AR-EXCHANGE, buy crypto Nigeria, sell crypto Nigeria, swap crypto, gift cards Africa, digital assets" />
-    <meta property="og:title" content="AR-EXCHANGE | Buy • Sell • Swap • Gift Cards" />
-    <meta property="og:description" content="Simple, secure digital asset trading built for Africa." />
+    <meta name="description" content="BERRYO ORGANIC SKINCARE offers organic skincare products, natural beauty essentials, and premium African skincare for Nigeria, Africa and international shoppers." />
+    <meta name="keywords" content="BERRYO ORGANIC SKINCARE, organic skincare Nigeria, organic skincare Abuja, natural skincare Nigeria, African skincare, organic beauty products, skincare Abuja, organic body care, natural beauty products" />
+    <meta property="og:title" content="BERRYO ORGANIC SKINCARE | Purely Organic. Naturally Beautiful." />
+    <meta property="og:description" content="Premium organic skincare for natural beauty and self-care." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <title>AR-EXCHANGE | Buy • Sell • Swap • Gift Cards</title>
-    <script type="module" crossorigin src="./assets/index-8ec71e08.js"></script>
-    <link rel="stylesheet" href="./assets/index-8f64e81f.css">
+    <title>BERRYO ORGANIC SKINCARE | Purely Organic. Naturally Beautiful.</title>
+    <script type="module" crossorigin src="./assets/index-3b23d65d.js"></script>
+    <link rel="stylesheet" href="./assets/index-007f5c13.css">
+    <style>
+      .berryo-app {
+        background: #f9f4f1;
+        color: #2d221d;
+        min-height: 100vh;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      .container {
+        margin: 0 auto;
+        width: min(1200px, calc(100% - 32px));
+      }
+      .topbar {
+        background: rgba(255, 255, 255, 0.9);
+        border-bottom: 1px solid rgba(120, 92, 72, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 30;
+      }
+      .topbar-inner {
+        display: flex;
+      }
+      .brand-wrap {
+        align-items: center;
+        display: flex;
+      }
+      .main-nav button.nav-link {
+        background: transparent;
+        border: 0;
+        color: #493e39;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        padding: 0;
+        text-transform: uppercase;
+      }
+      .main-nav button.nav-link:hover {
+        color: #996d5d;
+      }
+      .header-tools {
+        display: flex;
+      }
+      .search-box {
+        align-items: center;
+        background: #f1ece8;
+        border: 1px solid rgba(99, 77, 65, 0.08);
+        border-radius: 999px;
+        display: flex;
+        gap: 8px;
+        padding: 10px 16px;
+      }
+      .search-box input {
+        background: transparent;
+        border: 0;
+        color: #382f2b;
+        min-width: 0;
+        width: 100%;
+      }
+      .icon-button {
+        align-items: center;
+        background: #f4efe9;
+        border: 0;
+        border-radius: 12px;
+        display: inline-flex;
+        font-size: 1rem;
+        height: 40px;
+        justify-content: center;
+        width: 40px;
+      }
+      .cart-button {
+        gap: 6px;
+        padding: 0 14px;
+        width: auto;
+      }
+      .header-tools select {
+        background: #fff;
+        border: 1px solid rgba(90, 72, 65, 0.12);
+        border-radius: 12px;
+        color: #3a302d;
+        min-height: 42px;
+        padding: 0 14px;
+      }
+      .hero {
+        background: linear-gradient(120deg, #f8efe9 0%, #f5f1ed 50%, #f4eee7 100%);
+        padding: 54px 0 40px;
+      }
+      .hero-grid {
+        align-items: center;
+        display: grid;
+        gap: 42px;
+        grid-template-columns: 1.05fr 0.95fr;
+      }
+      .hero-copy h2 {
+        color: #241d1a;
+        font-size: clamp(2.6rem, 5vw, 5rem);
+        letter-spacing: -0.06em;
+        line-height: 1.02;
+        margin-bottom: 18px;
+      }
+      .hero-copy > p {
+        color: rgba(37, 29, 26, 0.8);
+        font-size: 1.12rem;
+        line-height: 1.7;
+        margin-bottom: 28px;
+        max-width: 560px;
+      }
+      .eyebrow {
+        color: #ac6b4d;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+      }
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .primary-btn,
+      .secondary-btn {
+        align-items: center;
+        border-radius: 999px;
+        display: inline-flex;
+        font-weight: 700;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 24px;
+        text-decoration: none;
+      }
+      .primary-btn {
+        background: linear-gradient(135deg, #c98a70 0%, #8a5748 100%);
+        border: 0;
+        color: #fff;
+      }
+      .secondary-btn {
+        background: #fff;
+        border: 1px solid rgba(64, 51, 47, 0.1);
+        color: #2d221d;
+      }
+      .hero-meta {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, minmax(110px, 1fr));
+        margin-top: 32px;
+      }
+      .hero-meta div {
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid rgba(83, 64, 57, 0.08);
+        border-radius: 20px;
+        padding: 16px 14px;
+      }
+      .hero-meta strong {
+        color: #2f1f1b;
+        display: block;
+        margin-bottom: 6px;
+      }
+      .hero-meta span {
+        color: rgba(42, 32, 29, 0.7);
+        font-size: 0.8rem;
+      }
+      .whatsapp-plugin {
+        align-items: center;
+        background: #25d366;
+        border-radius: 999px;
+        bottom: 24px;
+        box-shadow: 0 12px 28px rgba(37, 211, 102, 0.34);
+        color: #fff;
+        display: inline-flex;
+        font: 700 0.9rem/1 system-ui, sans-serif;
+        gap: 8px;
+        height: auto;
+        justify-content: center;
+        padding: 14px 18px;
+        position: fixed;
+        right: 24px;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        z-index: 50;
+      }
+      .whatsapp-plugin:hover,
+      .whatsapp-plugin:focus-visible {
+        box-shadow: 0 16px 32px rgba(37, 211, 102, 0.42);
+        color: #fff;
+        transform: translateY(-2px);
+      }
+      .whatsapp-plugin span:first-child {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        font-size: 0.72rem;
+        height: auto;
+        padding: 5px;
+        width: auto;
+      }
+      .topbar {
+        overflow: visible;
+      }
+      .topbar-inner {
+        align-items: center !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 18px !important;
+        min-height: 108px !important;
+      }
+      .brand-wrap {
+        flex: 0 0 auto !important;
+      }
+      .brand-logo {
+        height: 100px !important;
+        max-height: 100px !important;
+        max-width: 98px !important;
+        object-fit: contain;
+        width: auto !important;
+      }
+      .main-nav {
+        display: flex !important;
+        flex: 1 1 auto !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 14px 18px !important;
+        justify-content: center !important;
+        max-width: 450px;
+        min-width: 0;
+      }
+      .main-nav button.nav-link {
+        flex: 0 0 auto !important;
+        font-size: 0.75rem !important;
+        white-space: nowrap;
+        width: auto !important;
+      }
+      .header-tools {
+        align-items: center !important;
+        display: flex !important;
+        flex: 0 0 auto !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        justify-content: flex-end !important;
+        max-width: 340px;
+        width: auto !important;
+      }
+      .header-tools > * {
+        flex: 0 0 auto !important;
+        width: auto !important;
+      }
+      .search-box {
+        min-width: 200px !important;
+        width: 232px !important;
+      }
+      .header-tools select {
+        max-width: 104px;
+      }
+      @media (max-width: 560px) {
+        .topbar-inner {
+          align-items: center !important;
+          flex-direction: row !important;
+          flex-wrap: wrap !important;
+          justify-content: center !important;
+          min-height: 0 !important;
+          padding: 10px 16px !important;
+        }
+        .brand-logo {
+          height: 58px !important;
+          max-height: 58px !important;
+          max-width: 80px !important;
+        }
+        .main-nav {
+          display: flex !important;
+          flex-direction: row !important;
+          flex: 1 1 100% !important;
+          justify-content: flex-start !important;
+          max-height: 62px;
+          overflow-x: auto;
+          overflow-y: hidden;
+        }
+        .header-tools {
+          display: flex !important;
+          flex-direction: row !important;
+          flex: 1 1 100% !important;
+          justify-content: flex-start !important;
+          overflow-x: auto;
+        }
+        .search-box {
+          min-width: 180px !important;
+          width: 200px !important;
+        }
+        .whatsapp-plugin {
+          bottom: 16px;
+          right: 16px;
+        }
+      }
+      .ai-assistant {
+        bottom: 96px;
+        position: fixed;
+        right: 24px;
+        z-index: 50;
+      }
+      .ai-assistant .ai-toggle {
+        align-items: center;
+        background: #8a5748;
+        border: 0;
+        border-radius: 999px;
+        box-shadow: 0 12px 28px rgba(138, 87, 72, 0.34);
+        color: #fff;
+        display: inline-flex;
+        font-weight: 700;
+        font-size: inherit;
+        height: auto;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 18px;
+      }
+      .ai-assistant .ai-chat {
+        bottom: 60px;
+        position: absolute;
+        right: 0;
+      }
+      .cart-panel {
+        display: none !important;
+      }
+      .admin-extension-panel {
+        background: #fff;
+        border: 1px solid rgba(83, 64, 57, 0.08);
+        border-radius: 20px;
+        display: grid;
+        gap: 12px;
+        margin-top: 20px;
+        padding: 18px;
+      }
+      .admin-extension-panel h5 {
+        color: #2a201d;
+        font-size: 1rem;
+        margin: 0;
+      }
+      .admin-extension-panel input,
+      .admin-extension-panel textarea {
+        background: #f9f5f3;
+        border: 1px solid rgba(83, 64, 57, 0.1);
+        border-radius: 12px;
+        color: #2d221d;
+        padding: 10px 12px;
+        width: 100%;
+      }
+      .purchase-record {
+        border-top: 1px solid rgba(83, 64, 57, 0.08);
+        color: #4a3c39;
+        display: grid;
+        gap: 4px;
+        padding-top: 12px;
+      }
+      .header-tools .whatsapp-plugin,
+      .header-tools .ai-assistant {
+        bottom: auto;
+        position: static;
+        right: auto;
+      }
+      .header-tools .whatsapp-plugin {
+        align-items: center;
+        border-radius: 12px;
+        display: inline-flex;
+        height: 40px !important;
+        justify-content: center;
+        padding: 0;
+        width: 40px !important;
+      }
+      .header-tools .whatsapp-plugin span:first-child {
+        font-size: 0;
+        height: 26px;
+        padding: 0;
+        width: 26px;
+      }
+      .header-tools .whatsapp-plugin span:first-child {
+        background: center / contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23fff' d='M27.2 4.7A15.5 15.5 0 0 0 2.9 23.4L1 31l7.8-2A15.5 15.5 0 1 0 27.2 4.7ZM16 28.5c-2.5 0-4.9-.7-7-2l-.5-.3-4.6 1.2 1.2-4.5-.3-.5A12.5 12.5 0 1 1 16 28.5Zm6.9-9.3c-.4-.2-2.4-1.2-2.8-1.3-.4-.2-.7-.2-1 .2s-1.1 1.3-1.3 1.6c-.2.3-.5.3-.9.1-2.6-1.3-4.3-2.4-6-5.4-.4-.7.4-.7 1.1-2.3.1-.2 0-.5 0-.7l-1.2-2.8c-.3-.7-.7-.6-1-.6h-.8c-.3 0-.7.1-1.1.5s-1.4 1.4-1.4 3.5 1.5 4.1 1.7 4.4c.2.3 3 4.7 7.4 6.6 2.7 1.2 3.7 1.3 5 1.1.8-.1 2.4-1 2.7-2 .3-1 .3-1.9.2-2.1-.1-.2-.4-.3-.8-.5Z'/%3E%3C/svg%3E");
+      }
+      .header-tools .whatsapp-plugin span:last-child {
+        display: none;
+      }
+      .header-tools .ai-assistant .ai-toggle {
+        border-radius: 12px;
+        font-size: 0;
+        height: 40px;
+        min-height: 40px;
+        padding: 0;
+        width: 40px;
+      }
+      .header-tools .ai-assistant .ai-toggle::after {
+        content: "AI";
+        font-size: 0.65rem;
+      }
+      .header-tools .ai-assistant .ai-chat {
+        bottom: auto;
+        position: fixed;
+        right: 16px;
+        top: 108px;
+      }
+      .action-row .ai-assistant {
+        position: static !important;
+      }
+      .action-row .ai-assistant .ai-toggle {
+        align-items: center;
+        background: #8a5748;
+        border: 0;
+        border-radius: 999px;
+        box-shadow: 0 12px 28px rgba(138, 87, 72, 0.34);
+        color: #fff;
+        display: inline-flex;
+        font-size: 0.95rem;
+        font-weight: 700;
+        min-height: 56px;
+        padding: 0 24px;
+      }
+      .action-row .ai-assistant .ai-toggle::after {
+        content: none;
+      }
+      .action-row .ai-assistant .ai-chat {
+        bottom: auto !important;
+        position: absolute !important;
+        right: 0 !important;
+        top: 64px !important;
+      }
+      @media (max-width: 560px) {
+        .ai-assistant {
+          bottom: 80px;
+          right: 16px;
+        }
+        .ai-assistant .ai-toggle {
+          min-height: 48px;
+          padding: 0 18px;
+        }
+        .ai-assistant .ai-chat {
+          bottom: 64px;
+          max-width: calc(100vw - 32px);
+          position: fixed;
+          right: 16px;
+          width: 360px;
+        }
+        .action-row .ai-assistant .ai-toggle {
+          min-height: 52px;
+          padding: 0 20px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <a
+      class="whatsapp-plugin"
+      href="https://wa.me/2348034226547?text=Hello%20BERRYO%20Organic%20Skincare%2C%20I%20need%20help%20with%20an%20order."
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Chat with BERRYO Organic Skincare on WhatsApp"
+    >
+      <span aria-hidden="true">WhatsApp</span>
+      <span>Chat with us</span>
+    </a>
+    <script>
+      localStorage.removeItem('berryo-whatsapp-position');
+      localStorage.removeItem('berryo-ai-position');
+      (() => {
+        const placeHeaderActions = () => {
+          const tools = document.querySelector('.header-tools');
+          const whatsapp = document.querySelector('.whatsapp-plugin');
+          const ai = document.querySelector('.ai-assistant');
+          if (!tools || !whatsapp || !ai) return;
+
+          const firstSelect = tools.querySelector('select');
+          if (whatsapp.parentElement !== tools) tools.insertBefore(whatsapp, firstSelect);
+          const emailAction = Array.from(document.querySelectorAll('.action-row a'))
+            .find((action) => action.textContent?.trim() === 'Email us');
+          if (emailAction && ai.parentElement !== emailAction.parentElement) {
+            emailAction.parentElement.insertBefore(ai, emailAction);
+          }
+        };
+
+        new MutationObserver(placeHeaderActions).observe(document.body, {
+          childList: true,
+          subtree: true,
+        });
+        placeHeaderActions();
+      })();
+      (() => {
+        const readJson = (key, fallback) => {
+          try {
+            return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback));
+          } catch {
+            return fallback;
+          }
+        };
+
+        const createInput = (type, placeholder, value = '') => {
+          const input = document.createElement('input');
+          input.type = type;
+          input.placeholder = placeholder;
+          input.value = value;
+          return input;
+        };
+
+        const addAdminExtensions = () => {
+          const settingsPanel = Array.from(document.querySelectorAll('.admin-panel'))
+            .find((panel) => panel.querySelector('h4')?.textContent?.trim() === 'Store settings');
+          const productPanel = Array.from(document.querySelectorAll('.admin-panel'))
+            .find((panel) => panel.querySelector('h4')?.textContent?.trim() === 'Product editor');
+
+          if (!settingsPanel || !productPanel) return;
+
+          if (!settingsPanel.querySelector('.shipping-admin-panel')) {
+            const shipping = readJson('berryo-shipping-settings', {
+              deliveryFeeNGN: 1800,
+              deliveryFeeUSD: 2,
+              deliveryInformation: 'Delivery details are confirmed after payment.',
+            });
+            const panel = document.createElement('section');
+            panel.className = 'admin-extension-panel shipping-admin-panel';
+            panel.innerHTML = '<h5>Shipping information</h5>';
+            const ngn = createInput('number', 'Shipping fee (NGN)', shipping.deliveryFeeNGN);
+            const usd = createInput('number', 'Shipping fee (USD and other currencies)', shipping.deliveryFeeUSD);
+            const information = document.createElement('textarea');
+            information.placeholder = 'Shipping information shown to customers';
+            information.rows = 3;
+            information.value = shipping.deliveryInformation;
+            const save = document.createElement('button');
+            save.type = 'button';
+            save.className = 'primary-btn small';
+            save.textContent = 'Save shipping information';
+            save.addEventListener('click', () => {
+              localStorage.setItem('berryo-shipping-settings', JSON.stringify({
+                deliveryFeeNGN: Number(ngn.value) || 0,
+                deliveryFeeUSD: Number(usd.value) || 0,
+                deliveryInformation: information.value.trim(),
+              }));
+              save.textContent = 'Shipping saved';
+            });
+            panel.append(ngn, usd, information, save);
+            settingsPanel.appendChild(panel);
+          }
+
+          if (!productPanel.querySelector('.price-admin-panel')) {
+            const panel = document.createElement('section');
+            panel.className = 'admin-extension-panel price-admin-panel';
+            panel.innerHTML = '<h5>NGN and USD product pricing</h5><p class="auth-copy">Set a separate NGN price and USD price. The USD price is the reference price for all non-NGN currencies.</p>';
+            const ngn = createInput('number', 'NGN price');
+            const usd = createInput('number', 'USD price for all non-NGN currencies');
+            const save = document.createElement('button');
+            save.type = 'button';
+            save.className = 'primary-btn small';
+            save.textContent = 'Save selected product prices';
+            const loadSelectedProduct = () => {
+              const selectedName = productPanel.querySelector('.admin-product-item.active')?.textContent?.trim();
+              const products = readJson('berryo-products', []);
+              const product = products.find((item) => item.name === selectedName) || products[0];
+              if (!product) return;
+              ngn.value = String(product.price || '');
+              usd.value = String(product.usdPrice || '');
+              panel.dataset.productId = product.id;
+            };
+            save.addEventListener('click', () => {
+              const products = readJson('berryo-products', []);
+              const id = panel.dataset.productId;
+              const updated = products.map((product) => product.id === id
+                ? { ...product, price: Number(ngn.value) || 0, usdPrice: Number(usd.value) || 0 }
+                : product);
+              localStorage.setItem('berryo-products', JSON.stringify(updated));
+              save.textContent = 'Prices saved - refresh shop to apply';
+            });
+            productPanel.addEventListener('click', () => setTimeout(loadSelectedProduct, 0));
+            panel.append(ngn, usd, save);
+            productPanel.appendChild(panel);
+            loadSelectedProduct();
+          }
+
+          if (!settingsPanel.querySelector('.purchase-records-panel')) {
+            const panel = document.createElement('section');
+            panel.className = 'admin-extension-panel purchase-records-panel';
+            panel.innerHTML = '<h5>Customer purchase records</h5>';
+            const render = () => {
+              panel.querySelectorAll('.purchase-record').forEach((record) => record.remove());
+              const orders = readJson('berryo-orders', []);
+              if (!orders.length) {
+                const empty = document.createElement('p');
+                empty.className = 'purchase-record';
+                empty.textContent = 'No customer purchases have been recorded yet.';
+                panel.appendChild(empty);
+                return;
+              }
+              orders.forEach((order) => {
+                const record = document.createElement('div');
+                record.className = 'purchase-record';
+                record.innerHTML = `<strong>${order.order}</strong><span>${order.customer?.fullName || 'Customer'} · ${order.customer?.email || ''}</span><span>${order.status || 'Order Created'} · ${order.payment || ''}</span><span>${order.items?.map((item) => `${item.name} x${item.quantity}`).join(', ') || ''}</span>`;
+                panel.appendChild(record);
+              });
+            };
+            const refresh = document.createElement('button');
+            refresh.type = 'button';
+            refresh.className = 'secondary-btn small';
+            refresh.textContent = 'Refresh purchase records';
+            refresh.addEventListener('click', render);
+            panel.appendChild(refresh);
+            settingsPanel.appendChild(panel);
+            render();
+          }
+        };
+
+        new MutationObserver(addAdminExtensions).observe(document.body, {
+          childList: true,
+          subtree: true,
+        });
+        addAdminExtensions();
+      })();
+    </script>
     
   </body>
 </html>

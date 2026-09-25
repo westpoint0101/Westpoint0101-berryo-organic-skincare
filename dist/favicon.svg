@@ -1,11 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AR-EXCHANGE">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#59d0a6"/>
-      <stop offset="100%" stop-color="#3d8bff"/>
+    <linearGradient id="gold" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f4d684"/>
+      <stop offset="50%" stop-color="#d9a95a"/>
+      <stop offset="100%" stop-color="#b87938"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#93b17d"/>
+      <stop offset="100%" stop-color="#446d48"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="18" fill="#07111d"/>
-  <rect x="8" y="8" width="48" height="48" rx="14" fill="url(#accent)"/>
-  <path d="M32 16 18 47h8l2.5-6h7l2.5 6h8L32 16Zm0 12 2.7 7h-5.4l2.7-7Z" fill="#07111d"/>
+  <rect width="64" height="64" rx="18" fill="#f9efe5"/>
+  <circle cx="32" cy="32" r="24" fill="#fffaf6" stroke="url(#gold)" stroke-width="2.5"/>
+  <path d="M32 12 C24 12, 18 18, 18 26 C18 33, 22 38, 29 41 C32 43, 35 46, 35 50 C35 56, 29 60, 23 60 C17 60, 12 56, 10 51 L5 54 C9 62, 17 67, 25 67 C35 67, 43 61, 43 51 C43 43, 39 38, 32 34 C27 31, 24 28, 24 24 C24 20, 27 17, 32 17 C37 17, 41 19, 45 24 L49 20 C45 14, 39 12, 32 12 Z" fill="url(#green)"/>
+  <path d="M35 32 C42 29, 47 24, 47 17 C47 13, 45 10, 40 9 C44 14, 45 20, 44 26 C42 34, 37 39, 30 41 Z" fill="url(#gold)" opacity="0.9"/>
 </svg>
