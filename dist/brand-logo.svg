@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 170" role="img" aria-labelledby="title desc">
+  <title id="title">AR-EXCHANGE logo</title>
+  <desc id="desc">AR-EXCHANGE digital asset platform logo.</desc>
+  <defs>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#59d0a6"/>
+      <stop offset="100%" stop-color="#3d8bff"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="18" width="134" height="134" rx="34" fill="url(#accent)"/>
+  <path d="m79 39-35 76h20l6-15h18l6 15h20L79 39Zm0 31 6 16H73l6-16Z" fill="#07111d"/>
+  <text x="178" y="85" font-family="Arial, sans-serif" font-size="52" font-weight="800" letter-spacing="2" fill="#edf3fa">AR-EXCHANGE</text>
+  <text x="180" y="119" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="4" fill="#59d0a6">BUY • SELL • SWAP • GIFT CARDS</text>
+</svg>
