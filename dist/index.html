@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -698,7 +698,7 @@
       .wholesale-visual {
         background:
           linear-gradient(180deg, rgba(35, 24, 21, 0.02) 5%, rgba(35, 24, 21, 0.68) 100%),
-          url("./assets/products/molato-whitening-face-body-soap.png") center / cover,
+          url("./wholesale-hero.jpg") center / cover,
           #684d40;
         border-radius: 24px;
         color: #fff;
@@ -762,7 +762,7 @@
       }
       #wholesale-page .feature-list li::before {
         color: #a7654e;
-        content: "âœ¦";
+        content: "\2726";
         left: 0;
         position: absolute;
       }
@@ -1166,7 +1166,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="./home-premium.css?v=8">
+    <link rel="stylesheet" href="./home-premium.css?v=11">
     <script>
       document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') document.querySelector('.quick-view-close')?.click();
@@ -1330,7 +1330,7 @@
             const name = card.querySelector('h4')?.textContent.trim();
             const product = (window.BERRYO_CATALOG || []).find((item) => item.name === name);
             const button = card.querySelector('.wishlist-heart');
-            if (product && button && savedIds.includes(product.id) && !button.textContent.includes('â™¥')) {
+            if (product && button && savedIds.includes(product.id) && !button.textContent.includes('\u2665')) {
               button.click();
             }
           });
@@ -1346,7 +1346,7 @@
             const product = (window.BERRYO_CATALOG || []).find((item) => item.name === name);
             if (!product) return;
             const saved = readSavedWishlist().filter((id) => id !== product.id);
-            if (button.textContent.includes('â™¥')) saved.push(product.id);
+            if (button.textContent.includes('\u2665')) saved.push(product.id);
             try {
               localStorage.setItem('berryo-wishlist', JSON.stringify(saved));
             } catch (error) {

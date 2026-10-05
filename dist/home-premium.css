@@ -1159,3 +1159,29 @@ html {
     padding: 24px 20px 28px;
   }
 }
+
+/* Wholesale page banner */
+.berryo-app .wholesale-hero {
+  margin-bottom: 40px;
+}
+
+.berryo-app .wholesale-hero img {
+  aspect-ratio: 16 / 7;
+  border-radius: var(--b-radius);
+  box-shadow: var(--b-shadow);
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .berryo-app .wholesale-hero {
+    margin-bottom: 24px;
+  }
+
+  .berryo-app .wholesale-hero img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+.wholesale-hero{display:none!important}
