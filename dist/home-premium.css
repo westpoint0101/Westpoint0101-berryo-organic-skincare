@@ -1,0 +1,901 @@
+/* BERRYO premium Home page theme. Presentation only: it restyles existing markup. */
+:root {
+  --b-ivory: #faf6f1;
+  --b-cream: #f3ebe3;
+  --b-sand: #e8dccf;
+  --b-ink: #231b17;
+  --b-muted: #6f625a;
+  --b-line: rgba(80, 58, 46, 0.12);
+  --b-accent: #8c5e4a;
+  --b-accent-dark: #6f4636;
+  --b-gold: #b08d57;
+  --b-radius: 20px;
+  --b-radius-sm: 12px;
+  --b-shadow: 0 18px 40px -22px rgba(60, 38, 28, 0.35);
+  --b-serif: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", serif;
+  --b-sans: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.berryo-app {
+  background: var(--b-ivory);
+  color: var(--b-ink);
+  font-family: var(--b-sans);
+}
+
+.berryo-app h2,
+.berryo-app h3,
+.berryo-app h4 {
+  font-family: var(--b-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.berryo-app :focus-visible {
+  outline: 2px solid var(--b-accent);
+  outline-offset: 2px;
+}
+
+/* Buttons */
+.berryo-app .primary-btn,
+.berryo-app .secondary-btn {
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  min-height: 50px;
+  padding: 0 28px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.berryo-app .primary-btn {
+  background: var(--b-ink);
+  border: 1px solid var(--b-ink);
+  color: #fff;
+}
+
+.berryo-app .primary-btn:hover {
+  background: var(--b-accent-dark);
+  border-color: var(--b-accent-dark);
+  transform: translateY(-1px);
+}
+
+.berryo-app .secondary-btn {
+  background: transparent;
+  border: 1px solid var(--b-ink);
+  color: var(--b-ink);
+}
+
+.berryo-app .secondary-btn:hover {
+  background: var(--b-ink);
+  color: #fff;
+}
+
+.berryo-app .primary-btn.small,
+.berryo-app .secondary-btn.small {
+  font-size: 0.72rem;
+  min-height: 42px;
+  padding: 0 18px;
+}
+
+/* Header */
+.berryo-app .topbar {
+  background: rgba(250, 246, 241, 0.94);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--b-line);
+}
+
+.berryo-app .topbar-inner {
+  min-height: 84px !important;
+}
+
+.berryo-app .brand-logo {
+  height: 64px !important;
+  max-height: 64px !important;
+  max-width: 120px !important;
+}
+
+.berryo-app .main-nav {
+  max-width: 560px;
+}
+
+.berryo-app .main-nav button.nav-link {
+  color: var(--b-ink);
+  font-size: 0.7rem !important;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  padding: 6px 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.berryo-app .main-nav button.nav-link::after {
+  background: var(--b-accent);
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+  width: 100%;
+}
+
+.berryo-app .main-nav button.nav-link:hover {
+  color: var(--b-accent);
+}
+
+.berryo-app .main-nav button.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.berryo-app .search-box {
+  background: #fff;
+  border: 1px solid var(--b-line);
+}
+
+.berryo-app .icon-button {
+  background: #fff;
+  border: 1px solid var(--b-line);
+  border-radius: 50%;
+}
+
+.berryo-app .cart-button {
+  border-radius: 999px;
+}
+
+.berryo-app .header-tools select {
+  border-color: var(--b-line);
+  border-radius: 999px;
+}
+
+/* Section scaffolding */
+.berryo-app .section {
+  padding: 96px 0;
+}
+
+.berryo-app .section.padded {
+  padding-top: 88px;
+}
+
+.berryo-app .section.soft {
+  background: var(--b-cream);
+}
+
+.berryo-app .eyebrow {
+  color: var(--b-gold);
+  font-family: var(--b-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  margin-bottom: 14px;
+}
+
+.berryo-app .section-heading {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.berryo-app .section-heading h3 {
+  color: var(--b-ink);
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+.berryo-app .section-heading.wide {
+  align-items: flex-end;
+  text-align: left;
+}
+
+.berryo-app .section-heading.wide h3 {
+  margin: 0;
+}
+
+/* Hero */
+.berryo-app .hero {
+  background: linear-gradient(120deg, var(--b-cream) 0%, var(--b-ivory) 60%);
+  padding: 72px 0 88px;
+}
+
+.berryo-app .hero-grid {
+  gap: 64px;
+  grid-template-columns: 1.05fr 0.95fr;
+}
+
+.berryo-app .hero-copy h2 {
+  color: var(--b-ink);
+  font-size: clamp(2.6rem, 5.4vw, 4.8rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+  margin-bottom: 22px;
+}
+
+.berryo-app .hero-copy > p:not(.eyebrow) {
+  color: var(--b-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 520px;
+}
+
+.berryo-app .hero-meta {
+  border-top: 1px solid var(--b-line);
+  gap: 0;
+  margin-top: 40px;
+  padding-top: 24px;
+}
+
+.berryo-app .hero-meta div {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0 16px 0 0;
+}
+
+.berryo-app .hero-meta strong {
+  font-family: var(--b-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.berryo-app .hero-meta span {
+  color: var(--b-muted);
+  font-size: 0.78rem;
+}
+
+.berryo-app .hero-visual {
+  position: relative;
+}
+
+.berryo-app .hero-visual img {
+  aspect-ratio: 4 / 5;
+  border-radius: 200px 200px 24px 24px;
+  box-shadow: var(--b-shadow);
+  height: auto;
+  min-height: 0;
+  object-fit: cover;
+  width: 100%;
+}
+
+.berryo-app .floating-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--b-line);
+  border-radius: var(--b-radius-sm);
+  bottom: 28px;
+  left: 50%;
+  padding: 14px 22px;
+  right: auto;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.berryo-app .floating-card small {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Grids */
+.berryo-app .category-grid,
+.berryo-app .reasons-grid,
+.berryo-app .reason-grid,
+.berryo-app .testimonial-grid,
+.berryo-app .social-grid,
+.berryo-app .product-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.berryo-app .category-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.berryo-app .reasons-grid,
+.berryo-app .reason-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.berryo-app .testimonial-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.berryo-app .social-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.berryo-app .product-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Categories */
+.berryo-app .category-card {
+  background: #fff;
+  border: 1px solid var(--b-line);
+  border-radius: var(--b-radius);
+  color: var(--b-ink);
+  padding: 28px 22px;
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.berryo-app .category-card:hover {
+  border-color: var(--b-accent);
+  box-shadow: var(--b-shadow);
+  transform: translateY(-3px);
+}
+
+.berryo-app .category-icon {
+  background: var(--b-cream);
+  border-radius: 50%;
+  color: var(--b-accent);
+  font-family: var(--b-serif);
+  font-size: 1.1rem;
+  height: 44px;
+  margin-bottom: 22px;
+  width: 44px;
+}
+
+.berryo-app .category-card strong {
+  font-family: var(--b-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Product cards */
+.berryo-app .product-card {
+  background: #fff;
+  border: 1px solid var(--b-line);
+  border-radius: var(--b-radius);
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.berryo-app .product-card:hover {
+  box-shadow: var(--b-shadow);
+  transform: translateY(-3px);
+}
+
+.berryo-app .product-card img {
+  aspect-ratio: 1 / 1;
+  background: var(--b-cream);
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.berryo-app .product-badges {
+  left: 12px;
+  top: 12px;
+}
+
+.berryo-app .product-badges span {
+  background: #fff;
+  border: 1px solid var(--b-line);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.berryo-app .wishlist-heart {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--b-line);
+  border-radius: 50%;
+  color: var(--b-accent);
+  display: inline-flex;
+  height: 36px;
+  justify-content: center;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 36px;
+  z-index: 2;
+}
+
+.berryo-app .product-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.berryo-app .product-meta-row {
+  color: var(--b-muted);
+  font-size: 0.68rem;
+  gap: 8px;
+  letter-spacing: 0.12em;
+}
+
+.berryo-app .product-card h4 {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin: 12px 0 8px;
+}
+
+.berryo-app .demo-tag {
+  background: transparent;
+  color: var(--b-muted);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.berryo-app .star-row {
+  color: var(--b-gold);
+  font-size: 0.85rem;
+}
+
+.berryo-app .star-row span {
+  color: var(--b-muted);
+  font-size: 0.75rem;
+  margin-left: 6px;
+}
+
+.berryo-app .price-row {
+  margin: 12px 0 18px;
+}
+
+.berryo-app .price-row strong {
+  font-family: var(--b-serif);
+  font-size: 1.4rem;
+}
+
+.berryo-app .product-actions {
+  gap: 8px;
+  margin-top: auto;
+}
+
+.berryo-app .product-actions button {
+  flex: 1 1 110px;
+}
+
+/* Why choose / reasons */
+.berryo-app .reason-card {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--b-gold);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 24px 4px 0;
+}
+
+.berryo-app .reason-icon {
+  background: #fff;
+  border: 1px solid var(--b-line);
+  border-radius: 50%;
+  color: var(--b-accent);
+  height: 52px;
+  width: 52px;
+}
+
+.berryo-app .reason-card h4 {
+  font-size: 1.35rem;
+  margin: 0 0 10px;
+}
+
+.berryo-app .reason-card p {
+  color: var(--b-muted);
+  line-height: 1.7;
+}
+
+/* Promise / About */
+.berryo-app .promise-grid {
+  display: grid;
+  gap: 72px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.berryo-app .promise-copy h3 {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.12;
+}
+
+.berryo-app .promise-copy p {
+  color: var(--b-muted);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.berryo-app .promise-copy ul {
+  color: var(--b-ink);
+  list-style: none;
+  margin-top: 24px;
+  padding: 0;
+}
+
+.berryo-app .promise-copy li {
+  border-bottom: 1px solid var(--b-line);
+  padding: 12px 0 12px 28px;
+  position: relative;
+}
+
+.berryo-app .promise-copy li::before {
+  color: var(--b-gold);
+  content: "\2726";
+  left: 0;
+  position: absolute;
+}
+
+.berryo-app .promise-visual img {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--b-radius);
+  box-shadow: var(--b-shadow);
+  height: auto;
+  min-height: 0;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Testimonials */
+.berryo-app .testimonials {
+  background: var(--b-cream);
+}
+
+.berryo-app .testimonial-card {
+  background: #fff;
+  border: 1px solid var(--b-line);
+  border-radius: var(--b-radius);
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px;
+}
+
+.berryo-app .testimonial-card .stars {
+  color: var(--b-gold);
+}
+
+.berryo-app .testimonial-card h4 {
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+}
+
+.berryo-app .testimonial-card p {
+  color: var(--b-muted);
+  flex: 1;
+}
+
+.berryo-app .testimonial-card strong {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* CTA banners */
+.berryo-app .wholesale-box,
+.berryo-app .newsletter-box {
+  align-items: center;
+  background: var(--b-ink);
+  border: 0;
+  border-radius: 28px;
+  color: #fff;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1.2fr 1fr;
+  padding: 56px;
+}
+
+.berryo-app .wholesale-box {
+  grid-template-columns: 1fr auto;
+}
+
+.berryo-app .wholesale-box h3,
+.berryo-app .newsletter-box h3 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.berryo-app .wholesale-box p,
+.berryo-app .newsletter-box p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.berryo-app .wholesale-box .primary-btn {
+  background: #fff;
+  border-color: #fff;
+  color: var(--b-ink);
+}
+
+.berryo-app .wholesale-box .primary-btn:hover {
+  background: var(--b-gold);
+  border-color: var(--b-gold);
+  color: #fff;
+}
+
+.berryo-app .newsletter-form {
+  gap: 10px;
+}
+
+.berryo-app .newsletter-form input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  color: #fff;
+  min-height: 50px;
+  padding: 0 22px;
+}
+
+.berryo-app .newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.berryo-app .newsletter-form .primary-btn {
+  background: var(--b-gold);
+  border-color: var(--b-gold);
+  flex: 0 0 auto;
+}
+
+.berryo-app .newsletter-form .primary-btn:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--b-ink);
+}
+
+/* Social */
+.berryo-app .social-card {
+  background: var(--b-cream);
+  border-radius: var(--b-radius-sm);
+  box-shadow: none;
+}
+
+.berryo-app .social-card img {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  transition: transform 0.4s ease;
+  width: 100%;
+}
+
+.berryo-app .social-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Contact */
+.berryo-app .contact-grid {
+  gap: 56px;
+}
+
+.berryo-app .contact-copy h3 {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+}
+
+.berryo-app .contact-list a {
+  color: var(--b-ink);
+  text-decoration-color: var(--b-line);
+  transition: color 0.2s ease;
+}
+
+.berryo-app .contact-list a:hover {
+  color: var(--b-accent);
+}
+
+.berryo-app .contact-form input,
+.berryo-app .contact-form textarea {
+  background: #fff;
+  border: 1px solid var(--b-line);
+  border-radius: var(--b-radius-sm);
+}
+
+/* Footer */
+.berryo-app .site-footer {
+  background: #1b1512;
+  color: rgba(255, 255, 255, 0.78);
+  padding: 72px 0 64px;
+}
+
+.berryo-app .site-footer .footer-grid {
+  gap: 48px;
+  grid-template-columns: 1.4fr 1fr 1fr;
+}
+
+.berryo-app .site-footer h4 {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+}
+
+.berryo-app .site-footer h5 {
+  color: var(--b-gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.berryo-app .site-footer p {
+  line-height: 1.7;
+  max-width: 360px;
+}
+
+.berryo-app .site-footer ul {
+  gap: 12px;
+}
+
+.berryo-app .site-footer a {
+  color: rgba(255, 255, 255, 0.78);
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.berryo-app .site-footer a:hover {
+  color: #fff;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .berryo-app .product-grid,
+  .berryo-app .social-grid,
+  .berryo-app .reasons-grid,
+  .berryo-app .reason-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .berryo-app .section {
+    padding: 72px 0;
+  }
+
+  .berryo-app .hero {
+    padding: 48px 0 64px;
+  }
+
+  .berryo-app .hero-grid,
+  .berryo-app .promise-grid,
+  .berryo-app .wholesale-box,
+  .berryo-app .newsletter-box,
+  .berryo-app .site-footer .footer-grid {
+    gap: 36px;
+    grid-template-columns: 1fr;
+  }
+
+  .berryo-app .hero-visual {
+    margin: 0 auto;
+    max-width: 480px;
+    width: 100%;
+  }
+
+  .berryo-app .promise-visual {
+    margin: 0 auto;
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .berryo-app .wholesale-box,
+  .berryo-app .newsletter-box {
+    padding: 40px 32px;
+  }
+
+  .berryo-app .newsletter-form {
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .berryo-app .section {
+    padding: 56px 0;
+  }
+
+  .berryo-app .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .berryo-app .section-heading.wide {
+    align-items: flex-start;
+  }
+
+  .berryo-app .hero-copy h2 {
+    font-size: 2.5rem;
+  }
+
+  .berryo-app .hero-meta {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .berryo-app .hero-meta div {
+    padding-right: 8px;
+  }
+
+  .berryo-app .hero-meta strong {
+    font-size: 1.05rem;
+  }
+
+  .berryo-app .hero-visual img {
+    border-radius: 140px 140px 20px 20px;
+  }
+
+  .berryo-app .cta-row .primary-btn,
+  .berryo-app .cta-row .secondary-btn {
+    flex: 1 1 100%;
+  }
+
+  .berryo-app .product-grid {
+    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .berryo-app .product-body {
+    padding: 14px;
+  }
+
+  .berryo-app .product-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .berryo-app .product-actions button {
+    flex: 1 1 100%;
+  }
+
+  .berryo-app .reasons-grid,
+  .berryo-app .reason-grid,
+  .berryo-app .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .berryo-app .social-grid {
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .berryo-app .category-grid {
+    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .berryo-app .category-card {
+    padding: 20px 16px;
+  }
+
+  .berryo-app .wholesale-box,
+  .berryo-app .newsletter-box {
+    border-radius: 22px;
+    padding: 32px 22px;
+  }
+
+  .berryo-app .newsletter-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .berryo-app .floating-card {
+    white-space: normal;
+    width: max-content;
+    max-width: calc(100% - 32px);
+  }
+}
+
+@media (max-width: 380px) {
+  .berryo-app .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .berryo-app * {
+    transition: none !important;
+  }
+}
+
+/* Hide curated sections until the admin flags products for them */
+.berryo-app section:has(> .container > .smaller-grid:empty) {
+  display: none;
+}
