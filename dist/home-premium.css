@@ -879,7 +879,7 @@ html {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 319px) {
   .berryo-app .product-grid {
     grid-template-columns: 1fr;
   }
@@ -898,4 +898,102 @@ html {
 /* Hide curated sections until the admin flags products for them */
 .berryo-app section:has(> .container > .smaller-grid:empty) {
   display: none;
+}
+
+/* Compact header on tablet and phone: nav becomes one scrollable row, header scrolls away */
+@media (max-width: 1023px) {
+  .berryo-app .topbar {
+    position: static;
+  }
+
+  .berryo-app .topbar-inner {
+    flex-wrap: wrap !important;
+    gap: 10px 14px !important;
+    justify-content: space-between !important;
+    min-height: 0 !important;
+    padding: 10px 0 !important;
+  }
+
+  .berryo-app .brand-logo {
+    height: 52px !important;
+    max-height: 52px !important;
+  }
+
+  .berryo-app .header-tools {
+    flex: 1 1 auto !important;
+    justify-content: flex-end !important;
+    max-width: none;
+  }
+
+  .berryo-app .search-box {
+    flex: 1 1 160px !important;
+    min-width: 140px !important;
+    width: auto !important;
+  }
+
+  .berryo-app .main-nav {
+    -webkit-overflow-scrolling: touch;
+    border-top: 1px solid var(--b-line);
+    display: flex !important;
+    flex: 1 1 100% !important;
+    flex-wrap: nowrap !important;
+    gap: 22px !important;
+    justify-content: flex-start !important;
+    max-height: none !important;
+    max-width: none;
+    order: 3;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 10px 0 2px;
+    scrollbar-width: none;
+    width: 100%;
+  }
+
+  .berryo-app .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Shop filters */
+.berryo-app .shop-controls {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.berryo-app .shop-controls select {
+  background: #fff;
+  border: 1px solid var(--b-line);
+  border-radius: 999px;
+  color: var(--b-ink);
+  min-height: 44px;
+  padding: 0 16px;
+}
+
+.berryo-app .shop-controls label {
+  align-items: center;
+  color: var(--b-muted);
+  display: inline-flex;
+  font-size: 0.85rem;
+  gap: 10px;
+}
+
+.berryo-app .shop-controls input[type="range"] {
+  accent-color: var(--b-accent);
+}
+
+/* Products have no reviews yet: hide the empty "0 (0)" rating row */
+.berryo-app .product-card .star-row {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .berryo-app .shop-controls {
+    width: 100%;
+  }
+
+  .berryo-app .shop-controls select {
+    flex: 1 1 140px;
+  }
 }

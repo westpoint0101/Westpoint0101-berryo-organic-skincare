@@ -762,7 +762,7 @@
       }
       #wholesale-page .feature-list li::before {
         color: #a7654e;
-        content: "✦";
+        content: "âœ¦";
         left: 0;
         position: absolute;
       }
@@ -1102,53 +1102,56 @@
         cursor: wait;
         opacity: .65;
       }
-      .berryo-menu-toggle {
-        display: none;
+      .password-wrap {
+        display: block;
+        position: relative;
+        width: 100%;
       }
-      @media (max-width: 1100px) {
-        .berryo-menu-toggle {
-          align-items: center;
-          background: #fff;
-          border: 1px solid #e8ded7;
-          border-radius: 10px;
-          color: #30251f;
-          display: inline-flex;
-          font-size: 1.3rem;
-          height: 42px;
-          justify-content: center;
-          line-height: 1;
-          width: 46px;
-        }
-        .topbar .main-nav {
-          background: #fff;
-          border: 1px solid #eee5df;
-          border-radius: 14px;
-          display: none !important;
-          flex: 1 1 100% !important;
-          gap: 0 !important;
-          grid-template-columns: 1fr;
-          justify-content: stretch !important;
-          max-height: none !important;
-          max-width: none;
-          overflow: hidden !important;
-          width: 100%;
-        }
-        body.berryo-menu-open .topbar .main-nav {
-          display: grid !important;
-        }
-        .topbar .main-nav button.nav-link {
-          border-bottom: 1px solid #eee5df;
-          min-height: 46px;
-          padding: 10px 16px;
-          text-align: left;
-          white-space: normal;
-          width: 100% !important;
-        }
-        .topbar .main-nav button.nav-link:last-child {
-          border-bottom: 0;
-        }
+      .password-wrap input {
+        padding-right: 72px;
+        width: 100%;
       }
-      .berryo-store-warning {
+      .password-toggle {
+        background: transparent;
+        border: 0;
+        color: #8c5e4a;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        padding: 8px 14px;
+        position: absolute;
+        right: 4px;
+        text-transform: uppercase;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .password-toggle:hover {
+        color: #6f4636;
+      }
+      .remember-me-row {
+        align-items: center;
+        color: #493e39;
+        cursor: pointer;
+        display: flex;
+        font-size: 0.9rem;
+        gap: 8px;
+        margin: 4px 2px;
+      }
+      .auth-form .remember-me-row {
+        justify-content: flex-start;
+        width: auto;
+      }
+      .auth-form .remember-me-row input {
+        accent-color: #8c5e4a;
+        flex: 0 0 auto;
+        height: 18px !important;
+        min-height: 0 !important;
+        padding: 0 !important;
+        width: 18px !important;
+      }
+      .auth-form .remember-me-row span {
+        white-space: nowrap;
+      }      .berryo-store-warning {
         background: #fff4dd;
         border: 1px solid #ead5a9;
         border-radius: 10px;
@@ -1163,7 +1166,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="./home-premium.css">
+    <link rel="stylesheet" href="./home-premium.css?v=7">
   </head>
   <body>
     <div id="root"></div>
@@ -1177,33 +1180,7 @@
       <span aria-hidden="true">WhatsApp</span>
       <span>Chat with us</span>
     </a>
-    <script>
-      (() => {
-        const ensureMenuToggle = () => {
-          const inner = document.querySelector('.topbar-inner');
-          if (!inner || inner.querySelector('.berryo-menu-toggle')) return;
-          const button = document.createElement('button');
-          button.type = 'button';
-          button.className = 'berryo-menu-toggle';
-          button.setAttribute('aria-label', 'Toggle menu');
-          button.setAttribute('aria-expanded', 'false');
-          button.textContent = '☰';
-          button.addEventListener('click', () => {
-            const open = document.body.classList.toggle('berryo-menu-open');
-            button.setAttribute('aria-expanded', String(open));
-          });
-          inner.querySelector('.brand-wrap')?.insertAdjacentElement('afterend', button);
-        };
-        document.addEventListener('click', (event) => {
-          if (event.target.closest('.main-nav .nav-link')) {
-            document.body.classList.remove('berryo-menu-open');
-            document.querySelector('.berryo-menu-toggle')?.setAttribute('aria-expanded', 'false');
-          }
-        });
-        new MutationObserver(ensureMenuToggle).observe(document.body, { childList: true, subtree: true });
-        ensureMenuToggle();
-      })();
-    </script>
+    
     <script>
       localStorage.removeItem('berryo-whatsapp-position');
       localStorage.removeItem('berryo-ai-position');
@@ -1348,7 +1325,7 @@
             const name = card.querySelector('h4')?.textContent.trim();
             const product = (window.BERRYO_CATALOG || []).find((item) => item.name === name);
             const button = card.querySelector('.wishlist-heart');
-            if (product && button && savedIds.includes(product.id) && !button.textContent.includes('♥')) {
+            if (product && button && savedIds.includes(product.id) && !button.textContent.includes('â™¥')) {
               button.click();
             }
           });
@@ -1364,7 +1341,7 @@
             const product = (window.BERRYO_CATALOG || []).find((item) => item.name === name);
             if (!product) return;
             const saved = readSavedWishlist().filter((id) => id !== product.id);
-            if (button.textContent.includes('♥')) saved.push(product.id);
+            if (button.textContent.includes('â™¥')) saved.push(product.id);
             try {
               localStorage.setItem('berryo-wishlist', JSON.stringify(saved));
             } catch (error) {
@@ -1559,7 +1536,7 @@
           );
           if (!accountButton) return;
           if (!user) {
-            accountButton.textContent = '👤';
+            accountButton.textContent = 'ðŸ‘¤';
             accountButton.setAttribute('aria-label', 'Account');
             accountButton.removeAttribute('title');
             accountButton.classList.remove('customer-signed-in');
@@ -1569,7 +1546,7 @@
           const identifier = email || String(user.phone || '');
           const displayName = String(user.user_metadata?.full_name || identifier || 'Customer').trim();
           const shortName = displayName.split(/\s+/)[0] || 'Customer';
-          accountButton.textContent = '👤 ' + shortName;
+          accountButton.textContent = 'ðŸ‘¤ ' + shortName;
           accountButton.setAttribute('aria-label', 'Account for ' + (identifier || displayName));
           accountButton.title = identifier || displayName;
           accountButton.classList.add('customer-signed-in');
@@ -1613,6 +1590,36 @@
           input.required = true;
           if (type === 'password') input.minLength = 8;
           return input;
+        };
+
+        const addPasswordToggle = (input) => {
+          if (!input || input.parentElement?.classList.contains('password-wrap')) return;
+          const wrap = document.createElement('span');
+          wrap.className = 'password-wrap';
+          const toggle = document.createElement('button');
+          toggle.type = 'button';
+          toggle.className = 'password-toggle';
+          toggle.textContent = 'Show';
+          toggle.setAttribute('aria-label', 'Show password');
+          toggle.setAttribute('aria-pressed', 'false');
+          toggle.addEventListener('click', () => {
+            const visible = input.type === 'password';
+            input.type = visible ? 'text' : 'password';
+            toggle.textContent = visible ? 'Hide' : 'Show';
+            toggle.setAttribute('aria-label', visible ? 'Hide password' : 'Show password');
+            toggle.setAttribute('aria-pressed', String(visible));
+          });
+          input.replaceWith(wrap);
+          wrap.append(input, toggle);
+        };
+
+        const rememberedLoginKey = 'berryo-remembered-login';
+        const readRememberedLogin = () => {
+          try {
+            return localStorage.getItem(rememberedLoginKey) || '';
+          } catch (error) {
+            return '';
+          }
         };
 
         const normalizePhoneIdentifier = (value) => {
@@ -1676,6 +1683,17 @@
           let identifierField;
           let passwordField;
           let confirmPasswordField;
+          let rememberBox = null;
+          form.addEventListener('submit', () => {
+            if (mode !== 'signin' || !rememberBox || !identifierField) return;
+            try {
+              const identifier = identifierField.value.trim();
+              if (rememberBox.checked && identifier) localStorage.setItem(rememberedLoginKey, identifier);
+              else localStorage.removeItem(rememberedLoginKey);
+            } catch (error) {
+              console.error('BERRYO could not update the remembered login.', error);
+            }
+          });
           let nameField;
           let resendButton;
           let verificationCodeField;
@@ -1705,6 +1723,22 @@
             if (mode === 'signup') {
               confirmPasswordField = makeField('password', 'Confirm password', 'new-password');
               form.appendChild(confirmPasswordField);
+            }
+            addPasswordToggle(passwordField);
+            addPasswordToggle(confirmPasswordField);
+            rememberBox = null;
+            if (mode === 'signin') {
+              const remembered = readRememberedLogin();
+              if (remembered) identifierField.value = remembered;
+              const rememberLabel = document.createElement('label');
+              rememberLabel.className = 'remember-me-row';
+              rememberBox = document.createElement('input');
+              rememberBox.type = 'checkbox';
+              rememberBox.checked = Boolean(remembered);
+              const rememberText = document.createElement('span');
+              rememberText.textContent = 'Remember me';
+              rememberLabel.append(rememberBox, rememberText);
+              form.appendChild(rememberLabel);
             }
             submit.textContent = mode === 'signup' ? 'Create account' : 'Sign in';
             form.appendChild(submit);
@@ -2281,6 +2315,8 @@
             resetConfirmField = makeField('password', 'Confirm new password', 'new-password');
             submit.textContent = 'Save new password';
             form.append(resetPasswordField, resetConfirmField, submit);
+            addPasswordToggle(resetPasswordField);
+            addPasswordToggle(resetConfirmField);
             setStatus(card, 'Choose a new password for your customer account.', 'info');
           } else if (callback.get('error_code') === 'otp_expired') {
             setStatus(card, 'This email link has expired or was already used. Enter the registered email above and select “Resend verification email” to request a fresh link.', 'error');
@@ -2556,7 +2592,7 @@
               }
             }
 
-            const itemSummary = items.map((item) => `${item.quantity} × ${item.name}`).join(', ');
+            const itemSummary = items.map((item) => `${item.quantity} Ã— ${item.name}`).join(', ');
             const message = [
               'Hello BERRYO Organic Skincare, I would like to place an order.',
               orderReference ? `Order reference: ${orderReference}.` : orderSaveUnavailable
