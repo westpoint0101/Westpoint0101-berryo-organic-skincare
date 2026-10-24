@@ -612,9 +612,7 @@
     state.settings = data;
   };
 
-  const saveContent = async (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
+  const saveContent = async (form) => {
     const entries = Object.fromEntries(new FormData(form).entries());
     const content = structuredClone(state.settings || {});
     const bannerImage = entries['homepage.banner_image_file'];
@@ -658,9 +656,7 @@
     showNotice(enabled ? 'Admin access granted to the verified account.' : 'Admin access removed.');
   };
 
-  const changePassword = async (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
+  const changePassword = async (form) => {
     const password = form.elements['admin.password'].value;
     const confirm = form.elements['admin.password_confirm'].value;
     if (password.length < 8) throw new Error('Use a password with at least 8 characters.');
@@ -673,9 +669,8 @@
     showNotice('Your Supabase account password has been updated.');
   };
 
-  const addAdmin = async (event) => {
-    event.preventDefault();
-    const email = new FormData(event.currentTarget).get('email');
+  const addAdmin = async (form) => {
+    const email = new FormData(form).get('email');
     await setAdminRole(String(email), true);
   };
 
@@ -745,15 +740,15 @@
       const submit = form.querySelector('[type="submit"]');
       if (submit) submit.disabled = true;
       try {
-        if (form.id === 'content-form') await saveContent(event);
+        if (form.id === 'content-form') await saveContent(form);
         else if (form.id === 'payment-form') {
           await saveSettingsSection(form, 'payment');
           showNotice('Payment settings saved.');
         } else if (form.id === 'shipping-form') {
           await saveSettingsSection(form, 'shipping');
           showNotice('Delivery settings saved.');
-        } else if (form.id === 'profile-form') await changePassword(event);
-        else if (form.id === 'add-admin-form') await addAdmin(event);
+        } else if (form.id === 'profile-form') await changePassword(form);
+        else if (form.id === 'add-admin-form') await addAdmin(form);
       } catch (error) {
         showNotice(error.message, 'error');
       } finally {
